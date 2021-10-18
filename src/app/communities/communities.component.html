@@ -1,0 +1,26 @@
+<div class="container-topo">
+    <div class="item-topo">
+        <h1>Registered communites</h1>
+        <div class="btn">
+            <button type="submit" class="btn-add-comm">Add community</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-main">
+    <table *ngIf="responseCommunity">
+        <thead>
+            <td>Name</td>
+            <td>Sobrenome</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comm of responseCommunity.data">
+                <td>{{comm.id}}</td> 
+                <td>{{comm.name}}</td> 
+                <td>{{comm.address}}</td> 
+                <td>{{comm.parkingSpotPrice}}</td>
+                <td>{{comm.units}}</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

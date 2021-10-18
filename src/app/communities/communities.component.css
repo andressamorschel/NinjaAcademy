@@ -1,0 +1,21 @@
+.item-topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    display: inline-flex;
+    margin-right: 30px;
+}
+
+h1{
+    margin-left: 50px;
+}
+
+.btn-add-comm{
+    padding: 7px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1pz solid black
+}

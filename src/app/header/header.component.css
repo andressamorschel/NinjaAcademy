@@ -1,0 +1,35 @@
+header{
+    width: 100%;
+    height: 90px;
+    background-color: #93D11F;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-logo{
+    height: 50px;
+    width: 54px;
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo-text{
+    margin-left: 20px;
+}
+
+.menu-header li{
+    display: inline-block;
+    margin: 0 70px;
+}
+
+.menu-header li a{
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+
+}

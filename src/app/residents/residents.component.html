@@ -1,0 +1,87 @@
+<div class="container-topo">
+  <div class="item-topo">
+    <h1>Registered residents</h1>
+    <div class="btn">
+      <button
+        type="submit"
+        (click)="showModalAddResidents()"
+        class="btn-add-resident"
+      >
+        Add resident
+      </button>
+    </div>
+  </div>
+</div>
+<div class="background-modal">
+  <div class="modal-post" id="modal-add-resident">
+
+    <div class="item-modal">
+      <div class="modal-header">
+        <h3>Register resident</h3>
+        <div class="close-modal" (click)="closeModal()">
+          <i class="fas fa-times-circle"></i>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="name"
+            formControlName="name"
+          />
+        </div>
+
+        <button type="submit" class="btn-post">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container-list">
+  <table cellpadding="100">
+    <thead>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Last Login</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let resident of residents">
+        <td>{{ resident.id }}</td>
+        <td>{{ resident.name }}</td>
+        <td>{{ resident.lastLoginDate }}</td>
+        <td class="no-background">
+          <button class="btn-edit-resident" (click)="showModalEdit(resident)"><i class="far fa-edit"></i></button>
+          <button class="btn-delete-resident" (click)="deleteResident(resident)"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-edit" id="modal-edit-resident">
+  <div class="item-edit">
+
+    <div class="modal-header">
+      <h3>Edit resident</h3>
+      <div class="close-modal" (click)="closeModalEdit()">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="updateResident()">
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="name"
+          formControlName="name"
+        />
+      </div>
+
+    <button type="submit" class="btn-edit">Update</button>
+
+    </form>
+  </div>
+</div>
